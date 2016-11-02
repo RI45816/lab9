@@ -1,6 +1,65 @@
-# To change this license header, choose License Headers in Project Properties.
-# To change this template file, choose Tools | Templates
-# and open the template in the editor.
+# File:    lab9.py
+# Started: by Brendan Waters and Dr. Gibson
+# Author:  YOUR NAME GOES EHRE
+# Date:    DATE GOES HERE
+# Section: SECTION NUMBER GOES HERE
+# E-mail:  EMAIL_GOES_HERE@umbc.edu 
+# Description:
+#   This file contains python code that is broken and needs
+#   to be debugged.
 
-if __name__ == "__main__":
-    print("Hello World")
+
+# getNum() Get a number between 1 and 100 from the user
+# Input:   None
+# Output:  Integer between 1 and 100 (inclusive)
+def getNum():
+    msg = "Enter an integer between 1 and 100 (inclusive): "
+    num = input(int(msg))
+    while num <= 1 and num >= 100:
+        print("Invalid choice!")
+        num = int(input(msg))
+    return num
+        
+# dupesByTwo() Loops through a  list to see if there are any 
+#              duplicate entries separated by one other entry
+# Input:       List of integers
+# Output:      String (message of result)
+def dupesByTwo():
+    resultMsg = "No dupes by two"
+    for i in range(len(nums)):
+        if nums[i] == nums[i+2]:
+            resultMsg = "Found a dupe by two: " + nums[i]
+    return resultMsg
+
+# numsEquiv() Compare two numbers for equivalence
+# Input:      Two numbers (integer or float)
+# Output:     String (message of result)
+def numsEquiv(num1, num2)):
+    resultMsg = ""
+
+    if Num1 == Num2
+        resultMsg = "They match!"
+    else:
+        resultMsg = No match
+
+
+
+
+def main():
+    # TEST ONE FUNCTION AT A TIME, AND MAKE SURE IT WORKS
+    # BEFORE UNCOMMENTING THE NEXT ONE
+
+    # get a number from the user
+    num1 = getNum()
+
+    # check for duplicates separated by two, and print out the answer
+    ### numbers = [1, 0, 4, 4, 3, 2, 6, 2, 7, 9
+    ### print("The result of the dupes by two test:")
+    ### print( dupesByTwo(numbers) )
+    
+    # check to see if the number from the user is the same as the last
+    # number in the list of numbers from before, and print out the answer
+    ### result = numsEquiv(num1, numbers[len(numbers)-1])
+    ### print("The result of the equivalence test:", res)
+
+main()
