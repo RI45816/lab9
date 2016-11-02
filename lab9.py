@@ -14,8 +14,8 @@
 # Output:  Integer between 1 and 100 (inclusive)
 def getNum():
     msg = "Enter an integer between 1 and 100 (inclusive): "
-    num = input(int(msg))
-    while num <= 1 and num >= 100:
+    num = int(input(msg))
+    while num not in range(101):
         print("Invalid choice!")
         num = int(input(msg))
     return num
@@ -24,23 +24,25 @@ def getNum():
 #              duplicate entries separated by one other entry
 # Input:       List of integers
 # Output:      String (message of result)
-def dupesByTwo():
+def dupesByTwo(nums):
     resultMsg = "No dupes by two"
-    for i in range(len(nums)):
-        if nums[i] == nums[i+2]:
-            resultMsg = "Found a dupe by two: " + nums[i]
-    return resultMsg
+    dupes = []
+    for i in range(len(nums)-2):
+        if nums[i] == nums[i + 2]:
+            dupes.append(nums[i])
+    return  ("Found dupes by two: %s" % ",".join(str(x) for x in dupes)) if len(dupes) else resultMsg
 
 # numsEquiv() Compare two numbers for equivalence
 # Input:      Two numbers (integer or float)
 # Output:     String (message of result)
-def numsEquiv(num1, num2)):
+def numsEquiv(num1, num2):
     resultMsg = ""
 
-    if Num1 == Num2
+    if num1 == num2:
         resultMsg = "They match!"
     else:
-        resultMsg = No match
+        resultMsg = "No match"
+    return resultMsg
 
 
 
@@ -53,13 +55,13 @@ def main():
     num1 = getNum()
 
     # check for duplicates separated by two, and print out the answer
-    ### numbers = [1, 0, 4, 4, 3, 2, 6, 2, 7, 9
-    ### print("The result of the dupes by two test:")
-    ### print( dupesByTwo(numbers) )
+    numbers = [1, 0, 4, 4, 3, 2, 6, 2, 7, 9]
+    print("The result of the dupes by two test:")
+    print(dupesByTwo(numbers))
     
     # check to see if the number from the user is the same as the last
     # number in the list of numbers from before, and print out the answer
-    ### result = numsEquiv(num1, numbers[len(numbers)-1])
-    ### print("The result of the equivalence test:", res)
+    result = numsEquiv(num1, numbers[len(numbers)-1])
+    print("The result of the equivalence test:", result)
 
 main()
